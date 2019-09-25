@@ -1,10 +1,16 @@
-name: 'Node 12 Template Action'
-description: 'Get started with Node actions'
-author: 'GitHub'
+name: litmus_spec
+description: 'Run litmus spec tests'
+author: Puppet
 inputs:
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  puppet_gem_version:
+    description: 'The version of the Puppet gem to use for the current test set'
+    default: ~> 6.0
+  check:
+    description: 'The rake check task to run'
+    default: parallel_spec
+  bundler_args:
+    description: 'Arguments to pass to bundler'
+    default: --without system_tests
 runs:
-  using: 'node12'
-  main: 'lib/main.js'
+  using: node12
+  main: 'lib/litmus_spec.js'
