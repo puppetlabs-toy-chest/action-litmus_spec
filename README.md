@@ -6,7 +6,10 @@ This action was designed to allow running spec tests for Puppet modules. This wi
 
 In the following example from a Github Actions workflow, you can see a matrix setup for running all the different checks on a Puppet module using two ruby versions and two Puppet gem versions.
 
-    Spec:
+    jobs:
+    
+      Spec:
+        runs-on: ubuntu-latest
         strategy:
           matrix:
             check: [parallel_spec, 'syntax lint metadata_lint check:symlinks check:git_ignore check:dot_underscore check:test_file rubocop']
