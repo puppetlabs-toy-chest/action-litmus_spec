@@ -26,5 +26,5 @@ In the following example from a Github Actions workflow, you can see a matrix se
         - name: Spec Tests
           uses: puppetlabs/action-litmus_spec@master
           with:
-            puppet_gem_versionm: ${{ matrix.puppet_gem_version }}
+            puppet_gem_version: ${{ matrix.puppet_gem_version }}
             check: ${{ matrix.check }}
