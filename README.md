@@ -6,7 +6,10 @@ This action was designed to allow running spec tests for Puppet modules. This wi
 
 In the following example from a Github Actions workflow, you can see a matrix setup for running all the different checks on a Puppet module using two ruby versions and two Puppet gem versions.
 
-    Spec:
+    jobs:
+    
+      Spec:
+        runs-on: ubuntu-latest
         strategy:
           matrix:
             check: [parallel_spec, 'syntax lint metadata_lint check:symlinks check:git_ignore check:dot_underscore check:test_file rubocop']
@@ -22,9 +25,11 @@ In the following example from a Github Actions workflow, you can see a matrix se
     
         steps:
         - uses: actions/checkout@v1
-    
+        - uses: actions/setup-ruby@v1
+          with:
+            ruby_version: ${{matrix.ruby_version}}
         - name: Spec Tests
           uses: puppetlabs/action-litmus_spec@master
           with:
-            puppet_gem_versionm: ${{ matrix.puppet_gem_version }}
+            puppet_gem_version: ${{ matrix.puppet_gem_version }}
             check: ${{ matrix.check }}
