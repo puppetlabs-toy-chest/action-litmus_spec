@@ -25,7 +25,9 @@ In the following example from a Github Actions workflow, you can see a matrix se
     
         steps:
         - uses: actions/checkout@v1
-    
+        - uses: actions/setup-ruby@v1
+          with:
+            ruby_version: ${{matrix.ruby_version}}
         - name: Spec Tests
           uses: puppetlabs/action-litmus_spec@master
           with:
