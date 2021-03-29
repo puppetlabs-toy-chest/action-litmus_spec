@@ -29,7 +29,7 @@ In the following example from a Github Actions workflow, you can see a matrix se
           with:
             ruby_version: ${{matrix.ruby_version}}
         - name: Spec Tests
-          uses: puppetlabs/action-litmus_spec@master
+          uses: puppetlabs/action-litmus_spec@main
           with:
             puppet_gem_version: ${{ matrix.puppet_gem_version }}
             check: ${{ matrix.check }}
