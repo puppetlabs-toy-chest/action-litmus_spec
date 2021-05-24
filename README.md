@@ -1,3 +1,7 @@
+# Notice of no maintainership
+
+This action is not further maintained. If you want to run litmus on Github Actions, please check out [the PDK templates](https://github.com/puppetlabs/pdk-templates/tree/main/moduleroot/.github/workflows).
+
 # Action Litmus-Spec
 
 This action was designed to allow running spec tests for Puppet modules. This will allow you to set up a matrix strategy in your Github Actions workflow to run the module's spec tests on multiple ruby versions and Puppet agent gem versions.
